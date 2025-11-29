@@ -1,5 +1,7 @@
 .DS_Store
 .vscode
-lib
-node_modules
+/lib
+/build
+/dist
+/node_modules
 *-error.log

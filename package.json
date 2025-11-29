@@ -3,12 +3,13 @@
   "name": "until-async",
   "version": "3.0.2",
   "description": "Gracefully handle a Promise using async/await.",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
     }
   },
   "homepage": "https://github.com/kettanaito/until-async",
@@ -23,8 +24,8 @@
   "license": "MIT",
   "funding": "https://github.com/sponsors/kettanaito",
   "files": [
-    "lib",
-    "src"
+    "./build",
+    "./src"
   ],
   "keywords": [
     "async",
@@ -38,7 +39,7 @@
     "@ossjs/release": "^0.10.0",
     "@rolldown/binding-darwin-arm64": "1.0.0-beta.38",
     "publint": "^0.3.13",
-    "tsdown": "^0.15.3",
+    "tsdown": "0.17.0-beta.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
