@@ -94,7 +94,7 @@ This has been intentionally introduced to await a single logical unit as opposed
 // a rather complex piece of logic. This way any rejections
 // or exceptions happening within the given function
 // can be handled via the same "error".
-const [error, data] = until(async () => {
+const [error, data] = await until(async () => {
   const user = await fetchUser()
   const nextUser = normalizeUser(user)
   const transaction = await saveModel('user', user)
