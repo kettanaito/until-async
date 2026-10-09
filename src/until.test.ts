@@ -6,6 +6,7 @@ it('resolves with the value returned from the callback', async () => {
     null,
     'value',
   ])
+  await expect(until(() => 'value')).resolves.toEqual([null, 'value'])
 })
 
 it('resolves with the error thrown in the callback', async () => {
@@ -17,4 +18,10 @@ it('resolves with the error thrown in the callback', async () => {
     'custom reason',
     null,
   ])
+
+  await expect(
+    until(() => {
+      throw new Error('error')
+    }),
+  ).resolves.toEqual([new Error('error'), null])
 })

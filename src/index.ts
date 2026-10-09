@@ -13,12 +13,10 @@ export type UntilResult<RejectionReason, ResolveData> =
  * // [new Error('Oops!'), null]
  */
 export async function until<RejectionReason = Error, ResolveData = unknown>(
-  callback: () => Promise<ResolveData>,
+  callback: () => ResolveData | PromiseLike<ResolveData>,
 ): Promise<UntilResult<RejectionReason, ResolveData>> {
   try {
-    const data = await callback().catch((error) => {
-      throw error
-    })
+    const data = await callback()
     return [null, data]
   } catch (error: any) {
     return [error, null]
