@@ -42,6 +42,7 @@
     "tuple",
     "util"
   ],
+  "packageManager": "pnpm@11.27.1",
   "devDependencies": {
     "@ossjs/release": "^0.11.2",
     "@rolldown/binding-darwin-arm64": "1.3.3",
